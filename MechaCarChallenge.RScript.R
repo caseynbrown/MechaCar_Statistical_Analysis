@@ -1,4 +1,6 @@
+#Use the library() function to load the dplyr package.
 > library(dplyr)
+#Import and read in the MechaCar_mpg.csv file as a dataframe.
 > mechacar_mpg_df <- read_csv("Starter_Code (3)/MechaCar_mpg.csv")
 Rows: 50 Columns: 6                                                   
 ── Column specification ────────────────────────────────────────────────
@@ -7,6 +9,7 @@ dbl (6): vehicle_length, vehicle_weight, spoiler_angle, ground_clear...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#Perform linear regression using the lm() function. In the lm() function, pass in all six variables (i.e., columns), and add the dataframe you created in Step 4 as the data parameter.
 > lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mechacar_mpg_df)
 
 Call:
@@ -19,6 +22,7 @@ Coefficients:
 ground_clearance               AWD  
 3.546e+00        -3.411e+00  
 
+#Using the summary() function, determine the p-value and the r-squared value for the linear regression model.
 > summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mechacar_mpg_df))
 
 Call:
@@ -44,3 +48,11 @@ Residual standard error: 8.774 on 44 degrees of freedom
 Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
 F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
+#In your MechaCarChallenge.RScript, import and read in the Suspension_Coil.csv file as a table.
+> suspension_coil_df <- read_csv("Starter_Code (3)/Suspension_Coil.csv")
+
+#Write an RScript that creates a total_summary dataframe using the summarize() function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+> total_summary <- suspension_coil_df %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+#Write an RScript that creates a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+> lot_summary <- suspension_coil_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
