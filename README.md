@@ -45,3 +45,16 @@ The t-test on Lot 3 had a p-value of 0.041, lower than the significance level of
 
 ## Study Design: MechaCar vs Competition
 
+A statistical study that could be done to compare the performance of MechaCar vehicles against the performance of vehicles from other manufacturers could be looking at the relationship of factors in which affect the consumer. 
+
+###What metric or metrics are you going to test?
+I would test the cost of the vehicle, fuel efficiency, and safety ratings. 
+
+###What is the null hypothesis or alternative hypothesis?
+My null hypothesis would be that the vehicles would have the same scores in these metric compared to the other manufacturers, and the altnernative hypothesis would be the opposite. 
+
+###What statistical test would you use to test the hypothesis? And why?
+1-tailed t-tests could be used in order to see values for MechaCar compared to the other manufacturers. 
+
+###What data is needed to run the statistical test?
+We would need a list of the other manufacturers along with the cost of the vehicles, fuel efficiency for each, and the safety ratings. 
